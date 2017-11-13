@@ -11,10 +11,10 @@ def search_key_for_markbooks(markbook):
     """Generate a string search key for a markbook"""
     elements = []
     
-    elements.append(markbook['title'])  # title of markbook
-    elements.append(markbook['introduct'])  # introduction of markbook
+    elements.append(markbook['title'] if markbook['title'] else " ")  # title of markbook
+    elements.append(markbook['introduct'] if markbook['introduct'] else " ")  # introduction of markbook
     elements.append(markbook['sourceName'] if markbook['sourceName'] else " ")  # source name of markbook
-    elements.append(markbook['url'])  # url of markbook
+    elements.append(markbook['url'] if markbook['url'] else " ")  # url of markbook
 
     return u' '.join(elements)
 
